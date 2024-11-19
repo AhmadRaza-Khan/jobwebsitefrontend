@@ -1,7 +1,7 @@
 import axios from "axios";
 import FormComponent from "../components/Form";
 import { useNavigate } from "react-router-dom";
-
+const apiUrl = import.meta.env.VITE_BACKEND_URL
 const Signup = () => {
   const navigate = useNavigate() 
     const signupFields = [
@@ -13,7 +13,7 @@ const Signup = () => {
   
     const handleSignup = async(data: any) => {
       try {
-        const response = await axios.post("http://localhost:8000/api/v1/signup", data)
+        const response = await axios.post(`${apiUrl}/api/v1/signup`, data)
         if(response.data.success){
           navigate("/login")
         }

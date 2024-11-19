@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/Context';
 import axios from 'axios';
 import { useRef, useEffect } from 'react';
-
+const apiUrl = import.meta.env.VITE_BACKEND_URL
 const Sidebar = () => {
   const { isOpen, setIsOpen, logout } = useAppContext();
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/v1/logout", { withCredentials: true });
+      const response = await axios.get(`${apiUrl}/api/v1/logout`, { withCredentials: true });
       if (response.data.success) {
         logout()
         navigate("/login");

@@ -2,7 +2,7 @@ import axios from "axios";
 import FormComponent from "../components/Form";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/Context";
-
+const apiUrl = import.meta.env.VITE_BACKEND_URL
 const Login = () => {
   const navigate = useNavigate();
   const { setIsToken } = useAppContext();
@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleLogin = async (data: any) => {
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/login", data,
+      const response = await axios.post(`${apiUrl}/api/v1/login`, data,
         { withCredentials: true }
       );
       if (response.data.success) {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+const apiUrl = import.meta.env.VITE_BACKEND_URL
 interface Application {
   name: string;
   email: string;
@@ -29,7 +30,7 @@ const ApplicationStatus = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/application", {email}, 
+        `${apiUrl}/api/v1/application`, {email}, 
       {withCredentials: true}
       );
       setApplicationData(response.data.data);

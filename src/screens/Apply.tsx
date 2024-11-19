@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+const apiUrl = import.meta.env.VITE_BACKEND_URL
 const ApplyForProgrammer = () => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const ApplyForProgrammer = () => {
     e.preventDefault();
     try {
         const response = await axios.post(
-          "http://localhost:8000/api/v1/apply", formData, 
+          `${apiUrl}/api/v1/apply`, formData, 
         {withCredentials: true}
       );
         if (response.data.success) {
