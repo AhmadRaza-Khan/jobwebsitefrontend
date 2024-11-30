@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import BackNavigation from "../components/BackButton";
 const Areas = () => {
   return (
     <div className="bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 py-16">
-      <div className="container mx-auto px-6 text-center">
-        <h1 className="text-4xl font-bold text-blue-600 mb-8">Explore Our Programmer Job Roles</h1>
-        <p className="text-lg text-gray-700 mb-12">Join our growing team and make an impact with your skills in a variety of exciting technologies!</p>
+      <BackNavigation />
+      <div className="container mx-auto mt-20 px-6 text-center">
+        <h1 className="text-2xl font-bold text-blue-600 mb-8">Explore Our Programmer Job Roles</h1>
+        <p className="text-md text-gray-700 mb-12">Join our growing team and make an impact with your skills in a variety of exciting technologies!</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           

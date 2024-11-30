@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger"
+import BackNavigation from "./BackButton";
 const FormComponent = ({ title, fields, buttonLabel, onSubmit }: any) => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -10,6 +11,7 @@ const FormComponent = ({ title, fields, buttonLabel, onSubmit }: any) => {
 
   return (
     <div className="bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 py-36">
+      <BackNavigation />
       <Hamburger />
         <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg shadow-white border border-gray-200">
       <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">{title}</h2>

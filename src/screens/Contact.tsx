@@ -1,10 +1,12 @@
+import BackNavigation from "../components/BackButton";
 
 const Contact = () => {
     return (
       <div className="min-h-screen bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 py-12">
-        <div className="container mx-auto text-center">
+        <BackNavigation />
+        <div className="container mt-16 mx-auto text-center">
           <h1 className="text-4xl font-bold text-blue-600 mb-6">Contact Us</h1>
-          <p className="text-xl text-gray-700 mb-6">
+          <p className="text-md text-gray-700 mb-6">
             Have any questions or want to discuss your next project? Reach out to us!
           </p>
           <div className="max-w-lg mx-auto">

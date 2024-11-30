@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import BackNavigation from "../components/BackButton";
 const apiUrl = import.meta.env.VITE_BACKEND_URL
 interface Application {
   name: string;
@@ -44,10 +45,11 @@ const ApplicationStatus = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 py-10">
-      <div className="container mx-auto px-6">
+      <BackNavigation />
+      <div className="container mt-36 mx-auto px-6">
         <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-blue-600">Application Status</h1>
-          <p className="text-lg text-gray-600 mt-2">
+          <h1 className="text-2xl font-bold text-blue-600">Application Status</h1>
+          <p className="text-md text-gray-600 mt-2">
             Enter your email to view the status of your application.
           </p>
         </header>
@@ -66,7 +68,7 @@ const ApplicationStatus = () => {
               type="submit"
               className="px-4 py-2 bg-blue-600 text-white rounded-md"
             >
-              Search
+              Check
             </button>
           </form>
         </div>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import BackNavigation from '../components/BackButton';
 const apiUrl = import.meta.env.VITE_BACKEND_URL
 const ApplyForProgrammer = () => {
   const navigate = useNavigate()
@@ -41,10 +42,11 @@ const ApplyForProgrammer = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 py-10">
+      <BackNavigation />
       <div className="container mx-auto my-32 px-6">
         <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-blue-600">Apply for Programmer</h1>
-          <p className="text-lg text-gray-600 mt-2">Join our team and showcase your skills in a variety of technologies!</p>
+          <h1 className="text-2xl font-bold text-blue-600">Apply for Programmer</h1>
+          <p className="text-md text-gray-600 mt-2">Join our team and showcase your skills in a variety of technologies!</p>
         </header>
 
         <form className="bg-white shadow-lg rounded-lg p-8" onSubmit={handleSubmit}>
